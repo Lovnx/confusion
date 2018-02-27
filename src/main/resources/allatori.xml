@@ -1,0 +1,14 @@
+<config>
+    <input>
+        <jar in="confusion-0.0.1-SNAPSHOT.jar" out="confusion-0.0.1-SNAPSHOT-obfuscated.jar"/>
+    </input>
+
+    <keep-names>
+        <class access="protected+">
+            <field access="protected+"/>
+            <method access="protected+"/>
+        </class>
+    </keep-names>
+
+    <property name="log-file" value="log.xml"/>
+</config>
