@@ -1,12 +1,12 @@
-###**Allatori混淆技术介绍** 
+### **Allatori混淆技术介绍** 
 Allatori是一个Java 混淆器，它属于第二代混淆器，因此它能够全方位的保护你的知识产权。 Allatori具有以下几种保护方式：命名混淆，流混淆，调试信息混淆，字符串混淆，以及水印技术。对于教育和非商业项目来说这个混淆器是免费的。支持war和jar文件格式，并且允许对需要混淆代码的应用程序添加有效日期。 有项目需要对代码进行保护，比较初级的方案就是对代码进行混淆，打包之后的文件进行反编译后，就可以看到效果。此外，使用Allatori打的包大小也会小一点。
 
-###**工程介绍** 
+### **工程介绍** 
 ![这里写图片描述](http://img.blog.csdn.net/20180227105813973?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcmlja2l5ZWF0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 一个很普通的maven工程，不同的是在根目录下加入Allatori的jar包。
 
-#####**下面我们来看看pom.xml文件：**
+##### **下面我们来看看pom.xml文件：**
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -114,7 +114,7 @@ Allatori是一个Java 混淆器，它属于第二代混淆器，因此它能够�
 
 即可。
 
-#####**allatori.xml这个文件也很重要，看看其中的内容：**
+##### **allatori.xml这个文件也很重要，看看其中的内容：**
 
 ```
 <config>
@@ -141,9 +141,11 @@ Allatori是一个Java 混淆器，它属于第二代混淆器，因此它能够�
 ```
 `confusion-0.0.1-SNAPSHOT.jar`这个是打包后的未被混淆的包，而`confusion-0.0.1-SNAPSHOT-obfuscated.jar`是混淆后的包，这个是我们需要的。
 
-###**打包步骤** 
+### **打包步骤** 
 **1、clean maven工程。**
+
 **2、将resources下面的allatori.xml文件复制到target目录下面。**
+
 **3、install maven工程，看到如下信息后表示成功：**
 
 ```
@@ -175,7 +177,7 @@ Allatori是一个Java 混淆器，它属于第二代混淆器，因此它能够�
 
 箭头所指处即是我们需要的包，此包代码已被混淆。
 
-###**效果查看** 
+### **效果查看** 
 这里使用反编译工具对混淆后的包进行查看，我用的是jd-gui这个软件，小巧实用。
 
 **TestApplication.java混淆前：**
